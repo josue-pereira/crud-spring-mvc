@@ -1,3 +1,4 @@
+C:\Users\PMI\Documents\ProjetosSpring\projeto-inicial\src\main\java\br\com\pmi\projetoinicial\web\conversor\TipoSexoConverter.java
 C:\Users\PMI\Documents\ProjetosSpring\projeto-inicial\src\main\java\br\com\pmi\projetoinicial\domain\Usuario.java
 C:\Users\PMI\Documents\ProjetosSpring\projeto-inicial\src\main\java\br\com\pmi\projetoinicial\config\SpringInitConfig.java
 C:\Users\PMI\Documents\ProjetosSpring\projeto-inicial\src\main\java\br\com\pmi\projetoinicial\config\RootConfig.java
@@ -5,4 +6,6 @@ C:\Users\PMI\Documents\ProjetosSpring\projeto-inicial\src\main\java\br\com\pmi\p
 C:\Users\PMI\Documents\ProjetosSpring\projeto-inicial\src\main\java\br\com\pmi\projetoinicial\dao\UsuarioDao.java
 C:\Users\PMI\Documents\ProjetosSpring\projeto-inicial\src\main\java\br\com\pmi\projetoinicial\config\SpringMvcConfig.java
 C:\Users\PMI\Documents\ProjetosSpring\projeto-inicial\src\main\java\br\com\pmi\projetoinicial\web\controller\UsuarioController.java
+C:\Users\PMI\Documents\ProjetosSpring\projeto-inicial\src\main\java\br\com\pmi\projetoinicial\domain\TipoSexo.java
+C:\Users\PMI\Documents\ProjetosSpring\projeto-inicial\src\main\java\br\com\pmi\projetoinicial\util\ConexaoSqlServer.java
 C:\Users\PMI\Documents\ProjetosSpring\projeto-inicial\src\main\java\br\com\pmi\projetoinicial\web\controller\WelcomeController.java

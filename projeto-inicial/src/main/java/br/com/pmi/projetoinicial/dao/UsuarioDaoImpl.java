@@ -1,11 +1,13 @@
 package br.com.pmi.projetoinicial.dao;
 
+import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
+import br.com.pmi.projetoinicial.domain.TipoSexo;
 import br.com.pmi.projetoinicial.domain.Usuario;
 
 @Repository
@@ -21,12 +23,12 @@ public class UsuarioDaoImpl implements UsuarioDao{
 	private List<Usuario> createUserList() {
 	   if (us == null) {
 	     us = new LinkedList<>();
-	     us.add(new Usuario(System.currentTimeMillis()+1L, "Ana", "da Silva"));
-	     us.add(new Usuario(System.currentTimeMillis()+2L, "Luiz", "dos Santos"));
-	     us.add(new Usuario(System.currentTimeMillis()+3L, "Mariana", "Mello"));
-	     us.add(new Usuario(System.currentTimeMillis()+4L, "Caren", "Pereira"));
-	     us.add(new Usuario(System.currentTimeMillis()+5L, "Sonia", "Fagundes"));
-	     us.add(new Usuario(System.currentTimeMillis()+6L, "Norberto", "de Souza"));
+	     us.add(new Usuario(System.currentTimeMillis()+1L, "Ana", "da Silva", LocalDate.of(1992,  5,  19), TipoSexo.FEMININO));
+	     us.add(new Usuario(System.currentTimeMillis()+2L, "Luiz", "dos Santos", LocalDate.of(1990,  11,  29), TipoSexo.MASCULINO));
+	     us.add(new Usuario(System.currentTimeMillis()+3L, "Mariana", "Mello", LocalDate.of(1996,  3,  27), TipoSexo.FEMININO));
+	     us.add(new Usuario(System.currentTimeMillis()+4L, "Caren", "Pereira", null, null));
+	     us.add(new Usuario(System.currentTimeMillis()+5L, "Sonia", "Fagundes", null, null));
+	     us.add(new Usuario(System.currentTimeMillis()+6L, "Norberto", "de Souza", null, null));
 	   }
 	   return us;
 	}
@@ -45,6 +47,8 @@ public class UsuarioDaoImpl implements UsuarioDao{
 		.forEach((u) -> {
 			u.setNome(usuario.getNome());
 			u.setSobrenome(usuario.getSobrenome());
+			u.setData_nascimento(usuario.getData_nascimento());
+			u.setSexo(usuario.getSexo());
 		});
 	}
 

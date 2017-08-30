@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -8,38 +8,45 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Lista de Usuarios</title>
+<spring:url var="css" value="/static/css/bootstrap.css" />
+<link type="text/css" rel="stylesheet" href="${css }" />
 </head>
 
 <body>
-	<h1>Listar Usuários</h1>
-	<br>
-	<br>
-	<spring:url value="/usuario/cadastro" var="cadastro"/>
-	<a class="btn btn-info" href="${cadastro }">Novo Usuário</a> 
-	<br>
-	<br>
-	<span>${message == null ? '&nbsp;' : message }</span>
-	<br>
-	<table class="table table-striped table-condensed">
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>NOME</th>
-				<th>AÇÃO</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="usuario" items="${usuarios }">
+	<div class="container">
+		<h1>Listar UsuÃ¡rios</h1>
+		<br> <br>
+		<spring:url value="/usuario/cadastro" var="cadastro" />
+		<a class="btn btn-info" href="${cadastro }">Novo UsuÃ¡rio</a> <br>
+		<br> <span>${message == null ? '&nbsp;' : message }</span> <br>
+		<table class="table table-striped table-condensed">
+			<thead>
 				<tr>
-					<td>${usuario.id }</td>
-					<td>${usuario.nome }&nbsp; ${usuario.sobrenome }</td>
-					<td>
-						<a class="btn btn-info" href="#">Editar</a> 
-						<a class="btn btn-danger" href="#">Excluir</a>
-					</td>
+					<th>ID</th>
+					<th>NOME</th>
+					<th>DATA NASCIMENTO</th>
+					<th>SEXO</th>
+					<th>AÃ‡ÃƒO</th>
 				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+				<c:forEach var="usuario" items="${usuarios }">
+					<tr>
+						<td>${usuario.id }</td>
+						<td>${usuario.nome }&nbsp;${usuario.sobrenome }</td>
+						<td><f:parseDate var="date"
+								value="${usuario.data_nascimento }" pattern="yyy-MM-dd"
+								type="date" /> <f:formatDate value="${date }"
+								pattern="dd/MM/yyyy" type="date" /></td>
+						<td>${usuario.sexo.desc }</td>
+						<td><spring:url value="/usuario/update/${usuario.id }"
+								var="update" /> <a class="btn btn-info" href="${update }">Editar</a>
+							<spring:url value="/usuario/delete/${usuario.id }" var="delete" />
+							<a class="btn btn-danger" href="${delete }">Excluir</a></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>

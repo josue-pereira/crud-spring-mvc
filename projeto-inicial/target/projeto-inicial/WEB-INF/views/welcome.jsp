@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Agora sim Bem vindo!</h1>
+${status }
 </body>
 </html>

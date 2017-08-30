@@ -1,14 +1,20 @@
 package br.com.pmi.projetoinicial.config;
 
 
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.format.FormatterRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-@Configuration
+import br.com.pmi.projetoinicial.web.conversor.TipoSexoConverter;
 
-public class SpringMvcConfig {
+@Configuration
+public class SpringMvcConfig extends WebMvcConfigurerAdapter {
 	
 	@Bean
 	public InternalResourceViewResolver viewResolver() {
@@ -19,5 +25,25 @@ public class SpringMvcConfig {
 		
 		return resolver;
 	}
+
+	@Override
+	public void addFormatters(FormatterRegistry registry) {
+		registry.addConverter(new TipoSexoConverter());
+	}
+	
+	@Bean
+	public MessageSource messageSource() {
+		ResourceBundleMessageSource source = new ResourceBundleMessageSource();
+		source.setBasename("messages");
+		
+		return source;
+	}
+
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/static/**")
+		.addResourceLocations("/WEB-INF/resources/bootstrap/");
+	}
+	
 
 }

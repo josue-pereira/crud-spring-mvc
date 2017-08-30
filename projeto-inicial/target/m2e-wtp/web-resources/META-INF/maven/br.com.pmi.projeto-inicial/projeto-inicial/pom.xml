@@ -34,6 +34,19 @@
 	     <artifactId>javax.servlet.jsp-api</artifactId>
 	     <version>2.3.1</version>
 	</dependency>
+	<dependency>
+   		<groupId>org.hibernate</groupId>
+   		<artifactId>hibernate-validator</artifactId>
+   		<version>5.3.2.Final</version>
+	</dependency>
+  
+  <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/sqljdbc4 -->
+	<dependency>
+	    <groupId>com.microsoft.sqlserver</groupId>
+	    <artifactId>sqljdbc4</artifactId>
+	    <version>4.0</version>
+	    <scope>test</scope>
+	</dependency>
   
   </dependencies>
   
