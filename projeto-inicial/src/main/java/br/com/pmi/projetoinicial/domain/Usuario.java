@@ -1,6 +1,5 @@
 package br.com.pmi.projetoinicial.domain;
 
-import java.time.LocalDate;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -23,9 +22,7 @@ public class Usuario {
 	
 	@NotNull(message = "O campo 'data de nascimento' é requerido.")
 	@DateTimeFormat(iso = ISO.DATE)
-	private LocalDate data_nascimento;
-	
-	private TipoSexo sexo;
+	private String data_nascimento;
 	
 	
 	public Usuario() {
@@ -33,13 +30,12 @@ public class Usuario {
 		
 	}
 	
-	public Usuario(Long id, String nome, String sobrenome, LocalDate data_nascimento, TipoSexo sexo) {
+	public Usuario(Long id, String nome, String sobrenome, String data_nascimento) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.data_nascimento = data_nascimento;
-		this.sexo = sexo;
 	}
 
 	public Long getId() {
@@ -66,20 +62,12 @@ public class Usuario {
 		this.sobrenome = sobrenome;
 	}
 
-	public LocalDate getData_nascimento() {
+	public String getData_nascimento() {
 		return data_nascimento;
 	}
 
-	public void setData_nascimento(LocalDate data_nascimento) {
-		this.data_nascimento = data_nascimento;
-	}
-
-	public TipoSexo getSexo() {
-		return sexo;
-	}
-
-	public void setSexo(TipoSexo sexo) {
-		this.sexo = sexo;
+	public void setData_nascimento(String date) {
+		this.data_nascimento = date;
 	}
 
 	@Override

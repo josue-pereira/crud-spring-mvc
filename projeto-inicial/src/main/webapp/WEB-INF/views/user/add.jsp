@@ -34,12 +34,6 @@
 				<form:errors path="sobrenome" cssClass="label label-danger" />
 			</div>
 			<div class="form-group">
-				<label for="sexo">Sexo: </label>
-				<form:select path="sexo" class="form-control">
-					<form:options items="${sexos }" itemLabel="desc" />
-				</form:select>
-			</div>
-			<div class="form-group">
 				<label for="data_nacimento">Data Nascimento: </label>
 				<form:input path="data_nascimento" class="form-control" type="date" />
 				<form:errors path="data_nascimento" cssClass="label label-danger" />

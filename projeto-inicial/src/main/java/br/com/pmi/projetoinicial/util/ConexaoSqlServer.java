@@ -12,7 +12,7 @@ public class ConexaoSqlServer {
 
 	}
 
-	public static java.sql.Connection getConexaoMySQL() {
+	public static java.sql.Connection getConexao() {
 
       Connection connection = null;         
 
@@ -67,7 +67,7 @@ public class ConexaoSqlServer {
 
 	public static boolean FecharConexao() {
 		try {
-			ConexaoSqlServer.getConexaoMySQL().close();
+			ConexaoSqlServer.getConexao().close();
 
 			return true;
 			
@@ -82,6 +82,6 @@ public class ConexaoSqlServer {
 	public static java.sql.Connection ReiniciarConexao() {
 		FecharConexao();
 
-		return ConexaoSqlServer.getConexaoMySQL();
+		return ConexaoSqlServer.getConexao();
 	}
 }

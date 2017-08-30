@@ -25,7 +25,6 @@
 					<th>ID</th>
 					<th>NOME</th>
 					<th>DATA NASCIMENTO</th>
-					<th>SEXO</th>
 					<th>AÇÃO</th>
 				</tr>
 			</thead>
@@ -38,7 +37,6 @@
 								value="${usuario.data_nascimento }" pattern="yyy-MM-dd"
 								type="date" /> <f:formatDate value="${date }"
 								pattern="dd/MM/yyyy" type="date" /></td>
-						<td>${usuario.sexo.desc }</td>
 						<td><spring:url value="/usuario/update/${usuario.id }"
 								var="update" /> <a class="btn btn-info" href="${update }">Editar</a>
 							<spring:url value="/usuario/delete/${usuario.id }" var="delete" />

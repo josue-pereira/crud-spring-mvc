@@ -16,7 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.pmi.projetoinicial.dao.UsuarioDao;
-import br.com.pmi.projetoinicial.domain.TipoSexo;
 import br.com.pmi.projetoinicial.domain.Usuario;
 
 @Controller
@@ -34,7 +33,6 @@ public class UsuarioController {
 	
 	@GetMapping("/cadastro")
 	public String cadastro(@ModelAttribute("usuario") Usuario usuario, ModelMap model) {
-		model.addAttribute("sexos", TipoSexo.values());
 		return "/user/add";
 	}
 	
